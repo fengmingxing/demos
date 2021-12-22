@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web
+  namespace: electronic-shop
 spec:
   selector:
     matchLabels:
@@ -18,7 +19,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: quay.io/kiali/demo_error_rates_client:v1
+          image: cr-cn-beijing.volces.com/3stars-hackathon/demo_error_rates_client:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8888
@@ -36,6 +37,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mobile
+  namespace: electronic-shop
 spec:
   selector:
     matchLabels:
@@ -52,7 +54,7 @@ spec:
     spec:
       containers:
         - name: mobile
-          image: quay.io/kiali/demo_error_rates_client:v1
+          image: cr-cn-beijing.volces.com/3stars-hackathon/demo_error_rates_client:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8888
@@ -70,6 +72,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: music-v1
+  namespace: electronic-shop
 spec:
   selector:
     matchLabels:
@@ -86,7 +89,7 @@ spec:
     spec:
       containers:
         - name: music
-          image: quay.io/kiali/demo_error_rates_server:v1
+          image: cr-cn-beijing.volces.com/3stars-hackathon/demo_error_rates_server:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8888
@@ -102,6 +105,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: music
+  namespace: electronic-shop
   labels:
     app: music
 spec:
@@ -115,6 +119,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bookstore-v1
+  namespace: electronic-shop
 spec:
   selector:
     matchLabels:
@@ -131,7 +136,7 @@ spec:
     spec:
       containers:
         - name: bookstore
-          image: quay.io/kiali/demo_error_rates_server:v1
+          image: cr-cn-beijing.volces.com/3stars-hackathon/demo_error_rates_server:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8888
@@ -147,6 +152,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: bookstore
+  namespace: electronic-shop
   labels:
     app: bookstore
 spec:
@@ -160,6 +166,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: games-v1
+  namespace: electronic-shop
 spec:
   selector:
     matchLabels:
@@ -176,7 +183,7 @@ spec:
     spec:
       containers:
         - name: games
-          image: quay.io/kiali/demo_error_rates_server:v1
+          image: cr-cn-beijing.volces.com/3stars-hackathon/demo_error_rates_server:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8888
@@ -192,6 +199,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: games
+  namespace: electronic-shop
   labels:
     app: games
 spec:
@@ -205,6 +213,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shop-v1
+  namespace: electronic-shop
 spec:
   selector:
     matchLabels:
@@ -221,7 +230,7 @@ spec:
     spec:
       containers:
         - name: shop
-          image: quay.io/kiali/demo_error_rates_server:v1
+          image: cr-cn-beijing.volces.com/3stars-hackathon/demo_error_rates_server:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8888
@@ -239,6 +248,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shop
+  namespace: electronic-shop
   labels:
     app: shop
 spec:
